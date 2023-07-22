@@ -2,7 +2,10 @@
 -npm install
 -npm run start
 -mpm init
--npm install express --save
--npm install mongoose
-
+-npm install--save express 
+-npm install --save mongoose
+-npm install --save -g nodemon
+-npm install --save bcrypt
+-npm install --save jsonwebtoken
+-npm install --save multer
 

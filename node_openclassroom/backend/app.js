@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser=require("body-parser")
 const stuffRoutes=require("./routes/stuff")
+const userRoutes=require("./routes/user")
 
 
 app.use((req, res, next) => {
@@ -18,6 +19,7 @@ mongoose.connect('mongodb+srv://test_node:test_node@cluster0.lxagwwy.mongodb.net
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 app.use(bodyParser.json())
 app.use("/api/stuff",stuffRoutes)
+app.use("/api/auth",userRoutes)
 
 
 

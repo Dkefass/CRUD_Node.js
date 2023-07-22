@@ -1,14 +1,16 @@
 const express=require("express")
 const router=express.Router()
+const auth=require("../middleware/auth")
 const stuffCtrl = require("../controller/stuff")
+const multer= require("multer")
 
 
-router.delete('/:id',stuffCtrl.deleteThing)
-router.put('/:id',stuffCtrl.modifyThing)
-router.post('/', stuffCtrl.createThing)
+router.delete('/:id',auth,stuffCtrl.deleteThing)
+router.put('/:id',auth,stuffCtrl.modifyThing)
+router.post('/',auth,multer, stuffCtrl.createThing)
   
-router.get('/:id',stuffCtrl.getOnething)
+router.get('/:id',auth,stuffCtrl.getOnething)
   
-router.get('/',stuffCtrl.getAllThing)
+router.get('/',auth,stuffCtrl.getAllThing)
 
     module.exports=router;
