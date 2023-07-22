@@ -2,7 +2,7 @@ const express=require("express")
 const router=express.Router()
 const auth=require("../middleware/auth")
 const stuffCtrl = require("../controller/stuff")
-const multer= require("multer")
+const multer = require("../middleware/multer-config")
 
 
 router.delete('/:id',auth,stuffCtrl.deleteThing)

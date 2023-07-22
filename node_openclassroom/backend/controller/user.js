@@ -32,7 +32,7 @@ exports.signup = (req, res, next) => {
                         userId: user._id,
                         token: jwt.sign(
                             {userId:user._id},
-                            'RAMDOM_TOKEN_SECRET',
+                            'RANDOM_TOKEN_SECRET',
                             {expiresIn:"24h"}
                         )
                     });
